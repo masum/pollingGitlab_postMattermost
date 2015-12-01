@@ -73,13 +73,14 @@ function procGetMergeRequests(next) {
 			if (_lastTime.getTime() > (new Date(item.updated_at)).getTime()) {
 				continue;
 			}
+			data.date = new Date(item.updated_at);
 			data.type = 'MergeRequest';
 			data.msg = '[MergeRequest](http://' + _env.host + '/' + _env.group + '/' + _env.repo + '/merge_requests/'  + item.iid + ') ';
 			data.msg += item.title;
 			data.msg += '\n';
 			data.msg += ' UpVote(' + item.upvotes + ') DownVote(' + item.downvotes + ')';
 			data.msg += ' From ' + item['source_branch'] + ' into ' + item['target_branch']; 
-			data.msg +=  ' (' + item.author_name + ') ' + makeDateStr(new Date(item.updated_at))
+			data.msg +=  ' (' + item.author_name + ') ' + makeDateStr(data.date);
 			data.msg += '\n';
 			data.msg += item.description;
 			data.icon = _env['icon'];
@@ -136,9 +137,10 @@ function readCommits(branch, callback) {
 				continue;
 			}
 			var data = {}
+			data.date = new Date(item.created_at);
 			data.type = 'Commit';
 			data.msg = '[Commit to \'' + branch + '\'](http://' + _env.host + '/' + _env.group + '/' + _env.repo + '/commit/' + item.id +')';
-			data.msg += ' : ' + item.title + '(' + item.author_name + ') ' + makeDateStr(new Date(item.created_at)) ;
+			data.msg += ' : ' + item.title + '(' + item.author_name + ') ' + makeDateStr(data.date);
 			data.msg += '\n';
 			data.msg += item.message;
 			data.icon = _env['icon'];
