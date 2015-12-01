@@ -82,6 +82,7 @@ function procGetMergeRequests(next) {
 			data.msg +=  ' (' + item.author_name + ') ' + makeDateStr(new Date(item.updated_at))
 			data.msg += '\n';
 			data.msg += item.description;
+			data.icon = _env['icon'];
 			_msg.push(data);
 		}
 		next();
@@ -140,6 +141,7 @@ function readCommits(branch, callback) {
 			data.msg += ' : ' + item.title + '(' + item.author_name + ') ' + makeDateStr(new Date(item.created_at)) ;
 			data.msg += '\n';
 			data.msg += item.message;
+			data.icon = _env['icon'];
 			_msg.push(data);
 		}
 		callback();
