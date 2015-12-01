@@ -1,0 +1,15 @@
+{
+	"gitlab": {
+		"id": "",
+		"pw": "",
+		"host": "",
+		"project": "",
+		"group":"",
+		"repo":""
+	},
+	"mattermost": {
+		"host": "",
+		"port": "",
+		"path": ""
+	}
+}

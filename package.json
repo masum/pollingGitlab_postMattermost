@@ -1,0 +1,16 @@
+{
+  "name": "redmineWatch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "async": "^1.4.2",
+    "config": "^1.16.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "",
+  "license": "MIT"
+}
