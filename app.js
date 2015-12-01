@@ -24,7 +24,7 @@ function procGitlab(next) {
 	gitlabEnv['project'] = process.env['GITLAB_PROJECT'] || env['project'];
 	gitlabEnv['group'] = process.env['GITLAB_GROUP'] || env['group'];
 	gitlabEnv['repo'] = process.env['GITLAB_REPO'] || env['repo'];
-	gitlabEnvv['icon'] = process.env['GITLAB_ICON'] || env['icon'];
+	gitlabEnv['icon'] = process.env['GITLAB_ICON'] || env['icon'];
 
 	if (enableGitlab) {
 		gitlab.run(new Date(lastTime), gitlabEnv, function(msg) {
